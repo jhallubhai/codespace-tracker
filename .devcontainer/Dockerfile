@@ -7,6 +7,10 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y \
     cron tzdata \
     && apt clean && rm -rf /var/lib/apt/lists/*
 
+# install python
+RUN apt-get update && apt-get install -y python3-pip
+
+
 # Enable zram and docker
 RUN echo 'ALGO=lz4' > /etc/default/zramswap && \
     echo 'PERCENT=50' >> /etc/default/zramswap && \
@@ -14,7 +18,7 @@ RUN echo 'ALGO=lz4' > /etc/default/zramswap && \
     systemctl enable docker
 
 # Set working dir
-WORKDIR /workspaces/C93
+WORKDIR /workspaces/codespace-tracker
 
 # Default command
 CMD ["/bin/bash"]
