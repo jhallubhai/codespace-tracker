@@ -1,24 +1,26 @@
 FROM ubuntu:22.04
 
-# Base tools
+# Base tools & python
 RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y \
-    curl git vim nano wget python3 python3-pip build-essential \
+    curl git vim nano wget build-essential \
+    python3 python3-pip \
     htop zram-tools docker.io tlp jq unzip nodejs npm cmake \
-    cron tzdata \
-    && apt clean && rm -rf /var/lib/apt/lists/*
+    cron tzdata
 
-# install python
-RUN apt-get update && apt-get install -y python3-pip
-
-
-# Enable zram and docker
+# Enable zram and docker on boot
 RUN echo 'ALGO=lz4' > /etc/default/zramswap && \
     echo 'PERCENT=50' >> /etc/default/zramswap && \
     systemctl enable zramswap && \
     systemctl enable docker
 
-# Set working dir
+# Set working directory (auto cd here on launch)
 WORKDIR /workspaces/codespace-tracker
 
-# Default command
+# Final cleanup for a tidy image
+RUN apt clean && rm -rf /var/lib/apt/lists/*
+
+# Set working directory (auto cd here on launch)
+WORKDIR /workspaces/codespace-tracker
+
+# Default shell
 CMD ["/bin/bash"]

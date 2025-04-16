@@ -7,6 +7,7 @@ SESSION_LOG="$TRACKER_DIR/session_logs.json"
 TOTAL_RUNTIME="$TRACKER_DIR/total_runtime.json"
 LOG_DIR="/workspaces/codespace-tracker/logs"
 DEBUG_LOG="$LOG_DIR/debug.log"
+SESSION_START_FILE="$TRACKER_DIR/session_start.json"
 
 # 1. Tracker Directory
 if [ ! -d "$TRACKER_DIR" ]; then
@@ -14,6 +15,11 @@ if [ ! -d "$TRACKER_DIR" ]; then
     mkdir -p "$TRACKER_DIR"
 else
     echo "✅ Tracker directory already exists!"
+fi
+
+if [ ! -f "$SESSION_START_FILE" ]; then
+    echo "🆕 Creating empty session_start.json"
+    echo '{}' > "$SESSION_START_FILE"
 fi
 
 # 2. Log Folder for Debug
