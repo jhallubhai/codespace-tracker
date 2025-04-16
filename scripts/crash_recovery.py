@@ -2,8 +2,8 @@ import json
 from datetime import datetime
 
 # File paths
-SESSION_LOG_PATH = '/workspaces/codespace-tracker/codespace-tracker/.codespace-tracker/session_logs.json'
-TOTAL_RUNTIME_PATH = '/workspaces/codespace-tracker/codespace-tracker/.codespace-tracker/total_runtime.json'
+SESSION_LOG_PATH = '/workspaces/codespace-tracker/tracker/.codespace-tracker/session_logs.json'
+TOTAL_RUNTIME_PATH = '/workspaces/codespace-tracker/tracker/.codespace-tracker/total_runtime.json'
 
 def load_json(file_path):
     """Load JSON data from a file."""

@@ -3,7 +3,7 @@ import sys
 from datetime import datetime
 
 # Paths for session logs and total runtime
-TRACKER_DIR = '/workspaces/codespace-tracker/codespace-tracker/.codespace-tracker'
+TRACKER_DIR = '/workspaces/codespace-tracker/tracker/.codespace-tracker'
 SESSION_LOG_PATH = f'{TRACKER_DIR}/session_logs.json'
 TOTAL_RUNTIME_PATH = f'{TRACKER_DIR}/total_runtime.json'
 

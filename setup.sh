@@ -2,7 +2,7 @@
 
 echo "🚀 Running setup.sh to initialize codespace-tracker environment..."
 
-TRACKER_DIR="/workspaces/codespace-tracker/codespace-tracker/.codespace-tracker"
+TRACKER_DIR="/workspaces/codespace-tracker/tracker/.codespace-tracker"
 SESSION_LOG="$TRACKER_DIR/session_logs.json"
 TOTAL_RUNTIME="$TRACKER_DIR/total_runtime.json"
 LOG_DIR="/workspaces/codespace-tracker/logs"
